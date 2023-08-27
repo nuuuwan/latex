@@ -11,24 +11,27 @@ class LatexBook(Texable):
     def __init__(self, title: str, author: str, *children):
         Texable.__init__(
             self,
-            DocumentClass('book', '10pt, openany'),
+            DocumentClass('book', '12pt, openany'),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
             UsePackage('dirtytalk'),
             UsePackage('hyperref'),
-            UsePackage('ebgaramond'),
-            UsePackage('fontenc', 'T1'),
+            # UsePackage('libertine'),
+            # UsePackage('fontenc', 'T1'),
             UsePackage(
                 'geometry',
                 Dict(
                     paperheight='11.5in',
                     paperwidth='8.5in',
-                    left='0.75in',
-                    right='0.75in',
-                    top='1in',
-                    bottom='1in',
+                    left='1.5in',
+                    right='1.5in',
+                    top='1.5in',
+                    bottom='1.5in',
                 ),
             ),
+            UsePackage('parskip', Dict(
+                skip='0.0625in', indent='0.0in'
+            )),
             UsePackage('fancyhdr'),
             Tag('pagestyle', 'fancy'),
             Tag('fancyhead', ' ', 'R'),
