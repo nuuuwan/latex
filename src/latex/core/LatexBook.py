@@ -21,8 +21,8 @@ class LatexBook(Texable):
             UsePackage(
                 'geometry',
                 Dict(
-                    paperheight='8.5in',
-                    paperwidth='5.5in',
+                    paperheight='11.5in',
+                    paperwidth='8.5in',
                     left='0.75in',
                     right='0.75in',
                     top='1in',
