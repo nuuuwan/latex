@@ -7,3 +7,4 @@ from latex.core.native.Document import Document
 from latex.core.native.DocumentClass import DocumentClass
 from latex.core.native.Part import Part
 from latex.core.native.Title import Title
+from latex.core.native.Section import Section
