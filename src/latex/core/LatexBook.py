@@ -29,9 +29,7 @@ class LatexBook(Texable):
                     bottom='1.5in',
                 ),
             ),
-            UsePackage('parskip', Dict(
-                skip='0.0625in', indent='0.0in'
-            )),
+            UsePackage('parskip', Dict(skip='0.0625in', indent='0.0in')),
             UsePackage('fancyhdr'),
             Tag('pagestyle', 'fancy'),
             Tag('fancyhead', ' ', 'R'),
