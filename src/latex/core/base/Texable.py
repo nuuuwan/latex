@@ -19,7 +19,7 @@ class Texable:
 
     @property
     def tex(self) -> str:
-        return '\n'.join(self.tex_lines)
+        return '\n\n'.join(self.tex_lines)
 
     def write(self, path):
         File(path).write(self.tex)
