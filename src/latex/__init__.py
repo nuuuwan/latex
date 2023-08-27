@@ -9,6 +9,7 @@ from latex.core.native.DocumentClass import DocumentClass
 from latex.core.native.Items import Items
 from latex.core.native.Label import Label
 from latex.core.native.Part import Part
+from latex.core.native.Ref import Ref
 from latex.core.native.Section import Section
 from latex.core.native.Title import Title
 from latex.core.native.UsePackage import UsePackage

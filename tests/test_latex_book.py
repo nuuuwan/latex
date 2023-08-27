@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from latex import Chapter, Items, Label, LatexBook, Part, Section
+from latex import Chapter, Items, Label, LatexBook, Part, Ref, Section
 
 DIR_TEST_OUTPUT = 'test_output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
@@ -17,7 +17,10 @@ class TestCase(unittest.TestCase):
             ),
             Part(
                 'The End',
-                Chapter('Cats', Section('Meow', Items('Hello', 'World'))),
+                Chapter(
+                    'Cats',
+                    Section('Meow', Items('Hello', 'World', Ref('Help'))),
+                ),
             ),
         )
 
