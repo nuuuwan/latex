@@ -2,8 +2,12 @@ import re
 
 
 def escape_url(s: str) -> str:
-    URL_PATTERN = r'http[s]?://[\w.?/=&_-]+'
-    wrapped_s = re.sub(URL_PATTERN, r'\\url{\g<0>}', s)
+    wrapped_s = re.sub(r'http[s]?://[\w.?/=&_-]+', r'\\url{\g<0>}', s)
+    return wrapped_s
+
+
+def escape_quotes(s: str) -> str:
+    wrapped_s = re.sub(r'"[\w\s]+"', r'\\say{\g<0>}', s)
     return wrapped_s
 
 

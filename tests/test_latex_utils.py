@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from latex import escape, escape_url
+from latex import escape, escape_quotes, escape_url
 
 DIR_TEST_OUTPUT = 'test_output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
@@ -35,6 +35,24 @@ class TestCase(unittest.TestCase):
             ],
         ]:
             actual_output = escape_url(input)
+            self.assertEqual(actual_output, expected_output)
+
+    def test_escape_quotes(self):
+        for input, expected_output in [
+            ['', ''],
+            ['A', 'A'],
+            ['Harry "The Hat" Anderson', 'Harry \\say{"The Hat"} Anderson'],
+            ['"Hat Trick"', '\\say{"Hat Trick"}'],
+            [
+                '"Hat Trick" is a good book',
+                '\\say{"Hat Trick"} is a good book',
+            ],
+            [
+                '"Hat Trick" is a "good" book',
+                '\\say{"Hat Trick"} is a \\say{"good"} book',
+            ],
+        ]:
+            actual_output = escape_quotes(input)
             self.assertEqual(actual_output, expected_output)
 
     def test_escape(self):
