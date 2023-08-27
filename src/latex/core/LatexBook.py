@@ -11,11 +11,13 @@ class LatexBook(Texable):
     def __init__(self, title: str, author: str, *children):
         Texable.__init__(
             self,
-            DocumentClass('book', '11pt, openany'),
+            DocumentClass('book', '10pt, openany'),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
             UsePackage('dirtytalk'),
             UsePackage('hyperref'),
+            UsePackage('ebgaramond'),
+            UsePackage('fontenc', 'T1'),
             UsePackage(
                 'geometry',
                 Dict(
