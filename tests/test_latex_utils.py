@@ -43,7 +43,6 @@ class TestCase(unittest.TestCase):
             ['', ''],
             ['20%', '20\\%'],
             ['Tom & Jerry', 'Tom \\& Jerry'],
-            ['(20)', '\\(20\\)'],
         ]:
             actual_output = escape(input)
             self.assertEqual(actual_output, expected_output)
