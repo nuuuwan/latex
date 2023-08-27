@@ -41,16 +41,17 @@ class TestCase(unittest.TestCase):
         for input, expected_output in [
             ['', ''],
             ['A', 'A'],
-            ['Harry "The Hat" Anderson', 'Harry \\say{"The Hat"} Anderson'],
-            ['"Hat Trick"', '\\say{"Hat Trick"}'],
+            ['Harry "The Hat" Anderson', 'Harry \\say{The Hat} Anderson'],
+            ['"Hat Trick"', '\\say{Hat Trick}'],
             [
                 '"Hat Trick" is a good book',
-                '\\say{"Hat Trick"} is a good book',
+                '\\say{Hat Trick} is a good book',
             ],
             [
                 '"Hat Trick" is a "good" book',
-                '\\say{"Hat Trick"} is a \\say{"good"} book',
+                '\\say{Hat Trick} is a \\say{good} book',
             ],
+            ['James "Bubsy"', 'James \\say{Bubsy}'],
         ]:
             actual_output = escape_quotes(input)
             self.assertEqual(actual_output, expected_output)

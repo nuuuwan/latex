@@ -7,7 +7,7 @@ def escape_url(s: str) -> str:
 
 
 def escape_quotes(s: str) -> str:
-    wrapped_s = re.sub(r'"[\w\s]+"', r'\\say{\g<0>}', s)
+    wrapped_s = re.sub(r'"(.*?)"', r'\\say{\1}', s)
     return wrapped_s
 
 
@@ -16,5 +16,6 @@ def escape(s: str) -> str:
         s = s.replace(c, '\\' + c)
 
     s = escape_url(s)
+    s = escape_quotes(s)
     s = s.encode('ascii', 'ignore').decode('ascii')
     return s
