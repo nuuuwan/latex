@@ -10,6 +10,7 @@ class UsePackageEnumItem(Texable):
         children = [
             UsePackage('enumitem'),
             Tag('setlistdepth', MAX_LIST_DEPTH),
+            Tag('renewlist', ['itemize', 'itemize', MAX_LIST_DEPTH]),
         ]
         for i in range(MAX_LIST_DEPTH):
             children.append(
