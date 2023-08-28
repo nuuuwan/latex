@@ -3,7 +3,7 @@ import re
 
 def escape_url(s: str) -> str:
     wrapped_s = re.sub(
-        r'http[s]?://[\w.?/=&_-]+', r'\\footnote{\\url{\g<0>}}', s
+        r'http[s]?://[\w.?/=&_\-%#]+', r'\\footnote{\\url{\g<0>}}', s
     )
     return wrapped_s
 
@@ -14,7 +14,7 @@ def escape_quotes(s: str) -> str:
 
 
 def escape(s: str) -> str:
-    for c in ['%', '&']:
+    for c in ['%', '&', '#']:
         s = s.replace(c, '\\' + c)
 
     s = escape_url(s)
