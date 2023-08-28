@@ -2,7 +2,7 @@ import re
 
 
 def escape_url(s: str) -> str:
-    wrapped_s = re.sub(r'http[s]?://[\w.?/=&_-]+', r'\\url{\g<0>}', s)
+    wrapped_s = re.sub(r'http[s]?://[\w.?/=&_-]+', r'\\footnote{\g<0>}', s)
     return wrapped_s
 
 
