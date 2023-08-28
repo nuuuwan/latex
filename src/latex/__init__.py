@@ -8,6 +8,7 @@ from latex.core.latex_utils import escape, escape_quotes, escape_url
 from latex.core.LatexBook import LatexBook
 from latex.core.native.Bold import Bold
 from latex.core.native.Chapter import Chapter
+from latex.core.native.Color import Color
 from latex.core.native.custom.UsePackageEnumItem import UsePackageEnumItem
 from latex.core.native.Document import Document
 from latex.core.native.DocumentClass import DocumentClass
