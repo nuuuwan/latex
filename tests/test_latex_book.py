@@ -3,18 +3,8 @@ import unittest
 
 from utils import File
 
-from latex import (
-    Chapter,
-    Italic,
-    Items,
-    Join,
-    Label,
-    LatexBook,
-    Part,
-    Ref,
-    Section,
-    Str,
-)
+from latex import (Chapter, Italic, Items, Join, Label, LatexBook, Part, Ref,
+                   Section, Str)
 
 DIR_TEST_OUTPUT = 'test_output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
