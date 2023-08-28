@@ -1,17 +1,21 @@
 import os
 import unittest
 
+from utils import File
+
 from latex import (Chapter, Italic, Items, Join, Label, LatexBook, Part, Ref,
                    Section, Str)
 
 DIR_TEST_OUTPUT = 'test_output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
+EXPECTED_TEX_PATH = os.path.join('tests', 'expected_test.tex')
 
 
 class TestCase(unittest.TestCase):
     def test_init(self):
         latex_book = LatexBook(
             'Test Books',
+            'Test Author',
             Part(
                 'The Beginning',
                 Chapter('Help', Label('Help')),
@@ -23,7 +27,9 @@ class TestCase(unittest.TestCase):
                     Join(Str('What'), Str('is'), Str('a'), Str('cat?')),
                     Section(
                         'Meow',
-                        Items('Hello', Italic(Str('World')), Ref('Help')),
+                        Items(
+                            Str('Hello'), Italic(Str('World')), Ref('Help')
+                        ),
                     ),
                 ),
             ),
@@ -31,3 +37,7 @@ class TestCase(unittest.TestCase):
 
         latex_book.write(TEST_TEX_PATH)
         self.assertTrue(os.path.exists(TEST_TEX_PATH))
+        self.assertEqual(
+            File(TEST_TEX_PATH).read(),
+            File(EXPECTED_TEX_PATH).read(),
+        )
