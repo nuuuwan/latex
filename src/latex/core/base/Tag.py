@@ -7,11 +7,25 @@ class Tag(Texable):
     ):
         assert tag_name
 
-        if options and tag_value:
-            tex = '\\%s[%s]{%s}' % (tag_name, options, tag_value)
-        elif tag_value != "":
-            tex = '\\%s{%s}' % (tag_name, tag_value)
-        else:
-            tex = '\\%s' % tag_name
+        tex = '\\%s' % (tag_name)
+
+        if options:
+            tex += '[%s]' % (options)
+
+        if tag_value:
+            if isinstance(tag_value, Texable):
+                tex += '{%s}' % (tag_value.tex)
+            elif isinstance(tag_value, str):
+                tex += '{%s}' % (tag_value)
+            elif isinstance(tag_value, list):
+                for item in tag_value:
+                    if isinstance(item, Texable):
+                        tex += '{%s}' % (item.tex)
+                    elif isinstance(item, str):
+                        tex += '{%s}' % (item)
+                    else:
+                        raise TypeError(
+                            'Tag value must be a Texable or a string'
+                        )
 
         Texable.__init__(self, tex)
