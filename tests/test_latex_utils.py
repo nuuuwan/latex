@@ -12,26 +12,26 @@ class TestCase(unittest.TestCase):
         for input, expected_output in [
             ['', ''],
             ['A', 'A'],
-            ['https://www.xyz.com', '\\footnote{https://www.xyz.com}'],
+            ['https://www.xyz.com', '\\footnote{\\url{https://www.xyz.com}}'],
             [
                 'URL = https://www.xyz.com',
-                'URL = \\footnote{https://www.xyz.com}',
+                'URL = \\footnote{\\url{https://www.xyz.com}}',
             ],
             [
                 'Url(https://www.xyz.com)',
-                'Url(\\footnote{https://www.xyz.com})',
+                'Url(\\footnote{\\url{https://www.xyz.com}})',
             ],
             [
                 'Url(https://www.xyz.com/maps)',
-                'Url(\\footnote{https://www.xyz.com/maps})',
+                'Url(\\footnote{\\url{https://www.xyz.com/maps}})',
             ],
             [
                 'Url(https://www.xyz.com/maps?test=1)',
-                'Url(\\footnote{https://www.xyz.com/maps?test=1})',
+                'Url(\\footnote{\\url{https://www.xyz.com/maps?test=1}})',
             ],
             [
                 'Url(https://www.xyz.com/maps?v1=1&v2=2)',
-                'Url(\\footnote{https://www.xyz.com/maps?v1=1&v2=2})',
+                'Url(\\footnote{\\url{https://www.xyz.com/maps?v1=1&v2=2}})',
             ],
         ]:
             actual_output = escape_url(input)
