@@ -19,10 +19,7 @@ class Texable:
 
     @property
     def tex(self) -> str:
-        s = '\n\n'.join(self.tex_lines)
-        while '\n' * 3 in s:
-            s = s.replace('\n' * 3, '\n' * 2)
-        return s
-
+        return '\n'.join(self.tex_lines)
+      
     def write(self, path):
         File(path).write(self.tex)
