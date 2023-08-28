@@ -1,4 +1,3 @@
-import os
 
 from utils import File
 
@@ -25,6 +24,4 @@ class Texable:
 
     def write(self, path):
         assert path.endswith('.tex')
-        file_wildcard = path[:-3] + '*'
-        os.system(f'rm -f {file_wildcard}')
         File(path).write(self.tex)
