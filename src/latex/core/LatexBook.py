@@ -1,3 +1,4 @@
+from latex.core.base.Comment import Comment
 from latex.core.base.Dict import Dict
 from latex.core.base.Tag import Tag
 from latex.core.base.Texable import Texable
@@ -13,6 +14,7 @@ class LatexBook(Texable):
         Texable.__init__(
             self,
             DocumentClass('book', '12pt, openany'),
+            Comment.title('Packages'),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
             UsePackage('dirtytalk'),
@@ -35,6 +37,7 @@ class LatexBook(Texable):
             Tag('fancyhead', ' ', 'R'),
             Tag('fancyhead', ' ', 'L'),
             Tag('renewcommand', [Tag('headrulewidth'), '0pt']),
+            Comment.title('Document'),
             Document(
                 Title(title, author, ' '),
                 Tag('tableofcontents'),

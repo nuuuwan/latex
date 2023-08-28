@@ -2,7 +2,7 @@ from latex.core.base.Tag import Tag
 from latex.core.base.Texable import Texable
 from latex.core.native.UsePackage import UsePackage
 
-MAX_LIST_DEPTH = 10
+MAX_LIST_DEPTH = 20
 
 
 class UsePackageEnumItem(Texable):

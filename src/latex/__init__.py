@@ -1,4 +1,5 @@
 from latex.core.base.BeginEnd import BeginEnd
+from latex.core.base.Comment import Comment
 from latex.core.base.Join import Join
 from latex.core.base.Str import Str
 from latex.core.base.Tag import Tag
