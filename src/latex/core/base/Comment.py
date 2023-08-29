@@ -8,8 +8,9 @@ class Comment(Texable):
         Texable.__init__(self, *['% ' + line for line in lines])
 
     @staticmethod
-    def line():
-        return Comment('-' * LINE_WIDTH)
+    def line(line_width: int = 0):
+        line_width = line_width or LINE_WIDTH
+        return Comment('-' * line_width)
 
     @staticmethod
     def title(*lines: list[str]):
