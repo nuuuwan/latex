@@ -40,6 +40,7 @@ class LatexBook(Texable):
             Tag('fancyhead', ' ', 'R'),
             Tag('fancyhead', ' ', 'L'),
             Tag('renewcommand', [Tag('headrulewidth'), '0pt']),
+            UsePackage('amssymb'),
         )
 
     @staticmethod
