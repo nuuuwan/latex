@@ -1,4 +1,6 @@
-from utils import File
+from utils import File, Log
+
+log = Log('latex')
 
 
 class Texable:
@@ -23,4 +25,7 @@ class Texable:
 
     def write(self, path):
         assert path.endswith('.tex')
-        File(path).write(self.tex)
+        content = self.tex
+        n = len(content)
+        File(path).write(content)
+        log.debug(f'Wrote  {path}({n:,}B).')
