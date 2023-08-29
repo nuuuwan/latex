@@ -16,9 +16,9 @@ class LatexBook(Texable):
             Comment.title('Packages'),
             UsePackage('amssymb'),
             UsePackage('dirtytalk'),
-            UsePackage('hyperref'),
             UsePackage('imakeidx'),
             Tag('makeindex'),
+            UsePackage('hyperref'),
             Comment.line(),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
@@ -33,10 +33,10 @@ class LatexBook(Texable):
                 Dict(
                     paperheight='11.5in',
                     paperwidth='8.5in',
-                    left='1.5in',
-                    right='1.5in',
-                    top='1in',
-                    bottom='1in',
+                    left='1in',
+                    right='1in',
+                    top='0.8in',
+                    bottom='0.8in',
                 ),
             ),
             UsePackage('parskip', Dict(skip='0.1in', indent='0.0in')),
@@ -61,7 +61,7 @@ class LatexBook(Texable):
     def __init__(self, title: str, author: str, *children):
         Texable.__init__(
             self,
-            DocumentClass('book', '12pt, openany'),
+            DocumentClass('book', '10pt, openany'),
             LatexBook.packages(),
             LatexBook.document(title, author, *children),
         )
