@@ -1,10 +1,6 @@
-import os
 import unittest
 
 from latex import escape, escape_quotes, escape_url
-
-DIR_TEST_OUTPUT = 'test_output'
-TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
 
 
 class TestCase(unittest.TestCase):
