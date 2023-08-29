@@ -12,9 +12,9 @@ class Ref(Texable):
             Join(
                 Tag('autoref', label_name),
                 Italic(
-                    Str("(p."),
+                    Str(", p."),
                     Tag('pageref', label_name),
-                    Str(")"),
+                    Str(""),
                 ),
             ),
         )

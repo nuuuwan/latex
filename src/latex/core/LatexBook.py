@@ -14,14 +14,15 @@ class LatexBook(Texable):
     def packages() -> Texable:
         return Texable(
             Comment.title('Packages'),
+            UsePackage('amssymb'),
+            UsePackage('dirtytalk'),
+            UsePackage('hyperref'),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
             Tag('definecolor', ['slmaroon', 'RGB', '148,30,50']),
             Tag('definecolor', ['slorange', 'RGB', '223,117,0']),
             Tag('definecolor', ['slyellow', 'RGB', '247,183,24']),
             Tag('definecolor', ['slteal', 'RGB', '0,95,86']),
-            UsePackage('dirtytalk'),
-            UsePackage('hyperref'),
             UsePackageEnumItem(),
             UsePackage(
                 'geometry',
@@ -40,7 +41,6 @@ class LatexBook(Texable):
             Tag('fancyhead', ' ', 'R'),
             Tag('fancyhead', ' ', 'L'),
             Tag('renewcommand', [Tag('headrulewidth'), '0pt']),
-            UsePackage('amssymb'),
         )
 
     @staticmethod
