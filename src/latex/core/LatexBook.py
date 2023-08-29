@@ -17,12 +17,16 @@ class LatexBook(Texable):
             UsePackage('amssymb'),
             UsePackage('dirtytalk'),
             UsePackage('hyperref'),
+            UsePackage('imakeidx'),
+            Tag('makeindex'),
+            Comment.line(),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
             Tag('definecolor', ['slmaroon', 'RGB', '148,30,50']),
             Tag('definecolor', ['slorange', 'RGB', '223,117,0']),
             Tag('definecolor', ['slyellow', 'RGB', '247,183,24']),
             Tag('definecolor', ['slteal', 'RGB', '0,95,86']),
+            Comment.line(),
             UsePackageEnumItem(),
             UsePackage(
                 'geometry',
@@ -50,7 +54,7 @@ class LatexBook(Texable):
             Document(
                 Title(title, author, ' '),
                 Tag('tableofcontents'),
-                *children,
+                *(list(children) + [Tag('printindex')]),
             ),
         )
 

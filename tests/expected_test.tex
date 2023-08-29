@@ -2,14 +2,19 @@
 % ----------------------------------------------------------------
 % Packages
 % ----------------------------------------------------------------
+\usepackage{amssymb}
+\usepackage{dirtytalk}
+\usepackage{hyperref}
+\usepackage{imakeidx}
+\makeindex
+% ----------------------------------------------------------------
 \usepackage{graphicx}
 \usepackage{xcolor}
 \definecolor{slmaroon}{RGB}{148,30,50}
 \definecolor{slorange}{RGB}{223,117,0}
 \definecolor{slyellow}{RGB}{247,183,24}
 \definecolor{slteal}{RGB}{0,95,86}
-\usepackage{dirtytalk}
-\usepackage{hyperref}
+% ----------------------------------------------------------------
 \usepackage{enumitem}
 \setlistdepth{20}
 \renewlist{itemize}{itemize}{20}
@@ -40,7 +45,6 @@
 \fancyhead[R]{ }
 \fancyhead[L]{ }
 \renewcommand{\headrulewidth}{0pt}
-\usepackage{amssymb}
 % ----------------------------------------------------------------
 % Document
 % ----------------------------------------------------------------
@@ -66,6 +70,8 @@ What color is the \textbf{cat?}
 \begin{itemize}
 \item{Hello}
 \item{\textit{World}}
-\item{\autoref{Help} \textit{(p. \pageref{Help} )}}
+\item{\autoref{Help} \textit{, p. \pageref{Help} }}
+\item{\index{Help}}
 \end{itemize}
+\printindex
 \end{document}

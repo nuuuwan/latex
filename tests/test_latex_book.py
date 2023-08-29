@@ -3,8 +3,8 @@ import unittest
 
 from utils import File
 
-from latex import (Bold, Chapter, Color, Italic, Items, Join, Label, LatexBook,
-                   Part, Ref, Section, Str)
+from latex import (Bold, Chapter, Color, Index, Italic, Items, Join, Label,
+                   LatexBook, Part, Ref, Section, Str)
 
 DIR_TEST_OUTPUT = 'output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
@@ -34,7 +34,10 @@ class TestCase(unittest.TestCase):
                     Section(
                         'Meow',
                         Items(
-                            Str('Hello'), Italic(Str('World')), Ref('Help')
+                            Str('Hello'),
+                            Italic(Str('World')),
+                            Ref('Help'),
+                            Index('Help'),
                         ),
                     ),
                 ),

@@ -16,7 +16,7 @@ class Texable:
             elif isinstance(child, Texable):
                 lines.extend(child.tex_lines)
             else:
-                raise TypeError('child must be str or Texable')
+                raise TypeError('child must be str or Texable: ' + str(child))
         return lines
 
     @property

@@ -12,6 +12,7 @@ from latex.core.native.Color import Color
 from latex.core.native.custom.UsePackageEnumItem import UsePackageEnumItem
 from latex.core.native.Document import Document
 from latex.core.native.DocumentClass import DocumentClass
+from latex.core.native.Index import Index
 from latex.core.native.Italic import Italic
 from latex.core.native.Items import Items
 from latex.core.native.Label import Label
