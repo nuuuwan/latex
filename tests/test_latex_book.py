@@ -6,7 +6,7 @@ from utils import File
 from latex import (Bold, Chapter, Color, Italic, Items, Join, Label, LatexBook,
                    Part, Ref, Section, Str)
 
-DIR_TEST_OUTPUT = 'test_output'
+DIR_TEST_OUTPUT = 'output'
 TEST_TEX_PATH = os.path.join(DIR_TEST_OUTPUT, 'test.tex')
 EXPECTED_TEX_PATH = os.path.join('tests', 'expected_test.tex')
 
