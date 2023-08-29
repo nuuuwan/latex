@@ -28,4 +28,4 @@ class Texable:
         content = self.tex
         n = len(content)
         File(path).write(content)
-        log.debug(f'Wrote  {path}({n:,}B).')
+        log.info(f'Wrote {path} ({n:,}B).')
