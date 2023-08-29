@@ -10,10 +10,9 @@ from latex.core.native.UsePackage import UsePackage
 
 
 class LatexBook(Texable):
-    def __init__(self, title: str, author: str, *children):
-        Texable.__init__(
-            self,
-            DocumentClass('book', '12pt, openany'),
+    @staticmethod
+    def packages() -> Texable:
+        return Texable(
             Comment.title('Packages'),
             UsePackage('graphicx'),
             UsePackage('xcolor'),
@@ -37,10 +36,23 @@ class LatexBook(Texable):
             Tag('fancyhead', ' ', 'R'),
             Tag('fancyhead', ' ', 'L'),
             Tag('renewcommand', [Tag('headrulewidth'), '0pt']),
+        )
+
+    @staticmethod
+    def document(title: str, author: str, *children) -> Texable:
+        return Texable(
             Comment.title('Document'),
             Document(
                 Title(title, author, ' '),
                 Tag('tableofcontents'),
                 *children,
             ),
+        )
+
+    def __init__(self, title: str, author: str, *children):
+        Texable.__init__(
+            self,
+            DocumentClass('book', '12pt, openany'),
+            LatexBook.packages(),
+            LatexBook.document(title, author, *children),
         )
